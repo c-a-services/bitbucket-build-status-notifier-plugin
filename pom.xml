@@ -6,20 +6,24 @@
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
     <!-- Baseline Jenkins version you use to build and test the plugin. Users must have this version or newer to run. -->
-    <version>1.609.1</version>
+    <!-- https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/plugin/ -->
+    <version>6.2250.va_d01d559a_209</version>
     <relativePath />
   </parent>
 
   <artifactId>bitbucket-build-status-notifier</artifactId>
   <version>1.4.3-SNAPSHOT</version>
-  <packaging>hpi</packaging>
 
   <properties>
+	<jenkins.version>2.592</jenkins.version>
     <maven-release-plugin.version>2.5.1</maven-release-plugin.version>
-    <maven-hpi-plugin.version>1.112</maven-hpi-plugin.version>
-    <maven-deploy-plugin.version>2.6</maven-deploy-plugin.version>
-    <wagon-http.version>2.10</wagon-http.version>
-    <workflow.version>1.11</workflow.version>
+    <!-- https://repo.jenkins-ci.org/releases/org/jenkins-ci/tools/maven-hpi-plugin/ -->
+    <maven-hpi-plugin.version>3.1841.va_2f3e25d3a_5f</maven-hpi-plugin.version>
+    <maven-deploy-plugin.version>3.2.0</maven-deploy-plugin.version>
+    <wagon-http.version>3.5.3</wagon-http.version>
+    <!-- https://repo.jenkins-ci.org/artifactory/releases/org/jenkins-ci/plugins/workflow/workflow-step-api/ -->
+    <workflow.version>724.v538c2362b_dfb_</workflow.version>
+    <jenkins-test-harness.version>2582.v92781333ea_78</jenkins-test-harness.version>
   </properties>
 
   <name>Bitbucket Build Status Notifier Plugin</name>
@@ -103,7 +107,7 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins.workflow</groupId>
       <artifactId>workflow-aggregator</artifactId>
-      <version>${workflow.version}</version>
+      <version>608.v67378e9d3db_1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -123,7 +127,7 @@
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
-      <version>2.2.2</version>
+      <version>2.12.1</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -134,7 +138,7 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>credentials</artifactId>
-      <version>1.22</version>
+      <version>1521.v1e4763284417</version>
     </dependency>
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
@@ -146,6 +150,13 @@
       <artifactId>display-url-api</artifactId>
       <version>0.4</version>
     </dependency>
+    
+      <dependency>
+        <groupId>org.jenkins-ci.main</groupId>
+        <artifactId>jenkins-test-harness</artifactId>
+        <version>${jenkins-test-harness.version}</version>
+        <scope>test</scope>
+      </dependency>
   </dependencies>
 
   <build>
